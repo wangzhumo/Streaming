@@ -1,6 +1,26 @@
-cmake_minimum_required(VERSION 3.11)
-project(Streaming)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.11)
 
-set(CMAKE_CXX_STANDARD 11)
+SET(CMAKE_CXX_STANDARD 11)
 
-add_executable(myffmpeg src/main.c src/sdl/first_sdl.c src/ffmpeg/ffmpeg_log.c)
+PROJECT(Streaming C)
+
+INCLUDE_DIRECTORIES(./include/)
+
+LINK_DIRECTORIES(./lib/)
+
+SET(SOURCE_FILES ./src/main.c)
+
+ADD_EXECUTABLE(Streaming ${SOURCE_FILES})
+
+TARGET_LINK_LIBRARIES(
+        Streaming
+        avcodec
+        avdevice
+        avfilter
+        avformat
+        avresample
+        avutil
+        postproc
+        swresample
+        swscale
+)

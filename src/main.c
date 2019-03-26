@@ -1,7 +1,8 @@
 #include <stdio.h>
+#include "ffmpeg/ffmpeg_log.c"
 
-int main(int argc,char *argv[])
-{
-  
-  return 0;
+
+int main() {
+    printf_ffmpeg_log();
+    return 0;
 }
