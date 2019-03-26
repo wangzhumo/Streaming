@@ -3,6 +3,7 @@
 //
 #include <stdio.h>
 #include <libavutil/log.h>
+#include "ff_log.h"
 
 void printf_ffmpeg_log(){
     av_log_set_level(AV_LOG_DEBUG);

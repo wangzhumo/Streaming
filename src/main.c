@@ -1,8 +1,8 @@
 #include <stdio.h>
-#include "ffmpeg/ffmpeg_log.c"
+#include "ffmpeg/ffmpeg_file_op.h"
 
 
 int main() {
-    printf_ffmpeg_log();
+    rename_file();
     return 0;
 }

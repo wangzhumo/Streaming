@@ -8,7 +8,7 @@ INCLUDE_DIRECTORIES(./include/)
 
 LINK_DIRECTORIES(./lib/)
 
-SET(SOURCE_FILES ./src/main.c)
+SET(SOURCE_FILES ./src/main.c src/ffmpeg/ff_log.c src/ffmpeg/ff_log.h src/ffmpeg/ffmpeg_file_op.c src/ffmpeg/ffmpeg_file_op.h)
 
 ADD_EXECUTABLE(Streaming ${SOURCE_FILES})
 
