@@ -1,8 +1,8 @@
 #include <stdio.h>
-#include "ffmpeg/ffmpeg_file_op.h"
+#include "ffmpeg/list_file.h"
 
 
 int main() {
-    rename_file();
+    list_file();
     return 0;
 }
