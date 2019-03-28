@@ -6,7 +6,6 @@
 
 //打印音视频的基本信息
 void print_base_info(char *filePath) {
-    filePath = "/Users/phyooos/media/overwatch.mp4";
     int result;
 
     AVFormatContext *fmt_ctx = NULL;
@@ -14,7 +13,7 @@ void print_base_info(char *filePath) {
     av_log_set_level(AV_LOG_INFO);
 
     //此方法过时,可以不调用,但是为了兼容,还是加入
-    av_register_all();
+    //av_register_all();
 
     //&fmt_ctx 传入指针的地址,让avformat_open_input为我们分配一个AVFormatContext
     //filePath 文件的地址,一般会根据地址的后缀名来做响应的解析
