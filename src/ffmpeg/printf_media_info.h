@@ -10,4 +10,4 @@
 #include <libavutil/avutil.h>
 #include <libavformat/avformat.h>
 
-void print_base_info(char *filePath);
+int print_base_info(char *filePath);
