@@ -1,8 +1,8 @@
 #include <stdio.h>
-#include "ffmpeg/list_file.h"
+#include "ffmpeg/printf_media_info.h"
 
 
 int main() {
-    list_file();
+    print_base_info("");
     return 0;
 }

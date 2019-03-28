@@ -4,8 +4,9 @@
 
 #include "printf_media_info.h"
 
-
+//打印音视频的基本信息
 void print_base_info(char *filePath) {
+    filePath = "/Users/phyooos/media/overwatch.mp4";
     int result;
 
     AVFormatContext *fmt_ctx = NULL;
@@ -23,7 +24,7 @@ void print_base_info(char *filePath) {
 
     if (result < 0) {
         av_log(NULL, AV_LOG_ERROR, "Can't Open File: %s\n", av_err2str(result));
-        goto __OPEN_ERROR;
+        return;
     }
 
     //成功打开了文件
@@ -35,8 +36,4 @@ void print_base_info(char *filePath) {
 
     //此时我们关闭这个输入
     avformat_close_input(&fmt_ctx);
-
-    __OPEN_ERROR:
-    av_free(fmt_ctx);
-
 }
