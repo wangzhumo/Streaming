@@ -15,7 +15,7 @@ SET(SOURCE_FILES
         src/ffmpeg/list_file.c src/ffmpeg/list_file.h
         src/ffmpeg/printf_media_info.c src/ffmpeg/printf_media_info.h
         src/ffmpeg/take_audio_data.c src/ffmpeg/take_audio_data.h
-        src/utils/add_adts.c src/utils/add_adts.h)
+        src/ffmpeg/utils/add_adts.c src/ffmpeg/utils/add_adts.h)
 
 ADD_EXECUTABLE(Streaming ${SOURCE_FILES})
 

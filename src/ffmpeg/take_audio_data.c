@@ -4,7 +4,7 @@
 
 #include <stdio.h>
 #include "take_audio_data.h"
-#include "../utils/add_adts.h"
+#include "utils/add_adts.h"
 
 int take_audio(char *res,char *out)
 {
