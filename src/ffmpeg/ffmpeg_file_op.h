@@ -7,6 +7,7 @@
 
 #endif //STREAMING_FFMPEG_FILE_OP_H
 
+#include "libavformat/avformat.h"
 
 int delete_file();
 

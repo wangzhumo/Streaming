@@ -7,4 +7,8 @@
 
 #endif //STREAMING_LIST_FILE_H
 
+
+#include "libavutil/log.h"
+#include "libavformat/avformat.h"
+
 void list_file();

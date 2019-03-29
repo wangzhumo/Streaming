@@ -3,8 +3,6 @@
 //
 
 #include "list_file.h"
-#include <libavutil/log.h>
-#include <libavformat/avformat.h>
 
 void list_file()
 {

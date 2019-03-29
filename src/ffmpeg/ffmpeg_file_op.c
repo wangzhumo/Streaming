@@ -1,7 +1,6 @@
 //
 // Created by 王诛魔 on 2019/3/27.
 //
-#include <libavformat/avformat.h>
 #include "ffmpeg_file_op.h"
 
 
