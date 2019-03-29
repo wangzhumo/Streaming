@@ -7,12 +7,10 @@
 
 #endif //STREAMING_ADD_ADTS_H
 
-
-
 #include <stdio.h>
-#include "libavutil/log.h"
-#include "libavformat/avio.h"
-#include "libavformat/avformat.h"
+#include <libavutil/log.h>
+#include <libavformat/avio.h>
+#include <libavformat/avformat.h>
 
 
 void adts_header(char *szAdtsHeader, int dataLen);
