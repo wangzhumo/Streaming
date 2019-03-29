@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "ffmpeg/printf_media_info.h"
+#include "ffmpeg/take_audio_data.h"
 
 
 int main(int argc,char *argv[]) {
@@ -15,5 +16,6 @@ int main(int argc,char *argv[]) {
         printf("the params context error");
         return -1;
     }
+    take_audio(input, output);
     return 0;
 }
