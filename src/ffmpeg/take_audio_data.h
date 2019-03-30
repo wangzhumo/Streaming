@@ -9,6 +9,7 @@
 
 #include <libavutil/avutil.h>
 #include <libavformat/avformat.h>
+#include "./utils/h264_mp4convert.h"
 
 
 int take_audio(char *res,char *out);
