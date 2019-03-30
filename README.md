@@ -1,36 +1,21 @@
-# Streaming
+## Streaming
+
+Project learn FFmpeg , C/C++ and media.
 
 ### Project Tree
 
+#### **CMakLists.txt**
+> project Cmake config file
 
-```
-.
-├── CMakeLists.txt
-├── README.md
-├── doc
-├── include
-├── lib
-│   └── pkgconfig
-└── src
-    ├── ffmpeg
-    │   └── utils
-    ├── main.c
-    └── sdl
+#### **doc**
+> my notes
 
+#### **include / lib**
+> ffmpeg develop source /libs
 
-```
-
-#### CMakLists.txt
-#### README.md
-#### doc
-my notes
-
-#### include / lib
-ffmpeg develop source /libs
-
-#### src
+#### **src**
 ##### ffmpeg 
-ffmpeg code
+> ffmpeg code
 
 ##### sdl
-SDL(Simple DirectMedia Layer)
+> SDL(Simple DirectMedia Layer)
