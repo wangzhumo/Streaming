@@ -2,20 +2,9 @@
 
 Project learn FFmpeg , C/C++ and media.
 
-### Project Tree
+主要是通过学习FFmpeg来入门多媒体以及C/C++
 
-#### **CMakLists.txt**
-> project Cmake config file
+### Question
 
-#### **doc**
-> my notes
+- [提取视屏的NAL头部分有误](https://github.com/wangzhumo/Streaming/issues/2)  😭
 
-#### **include / lib**
-> ffmpeg develop source /libs
-
-#### **src**
-##### ffmpeg 
-> ffmpeg code
-
-##### sdl
-> SDL(Simple DirectMedia Layer)
