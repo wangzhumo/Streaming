@@ -10,8 +10,8 @@
 int take_video(char *input, char *out) {
     int error;
     char errors[1024];
-    int stream_index;
-    int length;
+
+    int stream_index = -1;
 
     AVFormatContext *fmt_ctx = NULL;
     AVPacket packet;

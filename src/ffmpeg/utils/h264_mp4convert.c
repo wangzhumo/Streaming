@@ -49,7 +49,7 @@ int alloc_and_copy(AVPacket *out_packet,
     if (!offset) {
         AV_WB32(out_packet->data + sps_pps_size, 1);
     } else {
-        (out_packet->data + offset + sps_pps_size)[0] =
+        (out_packet->data + offset + sps_pps_size)[0] = 0;
         (out_packet->data + offset + sps_pps_size)[1] = 0;
         (out_packet->data + offset + sps_pps_size)[2] = 1;
     }
