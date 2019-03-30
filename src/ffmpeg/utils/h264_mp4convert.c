@@ -46,12 +46,12 @@ int alloc_and_copy(AVPacket *out_packet,
         //之后移动到offset + sps_pps_size + nal_header_size,写入数据in
         memcpy(out_packet->data + offset + sps_pps_size + nal_header_size, in, in_size);
     }
-    if (offset) {
+    if (!offset) {
+        AV_WB32(out_packet->data + sps_pps_size, 1);
+    } else {
         (out_packet->data + offset + sps_pps_size)[0] =
         (out_packet->data + offset + sps_pps_size)[1] = 0;
         (out_packet->data + offset + sps_pps_size)[2] = 1;
-    } else {
-        AV_WB32(out_packet->data + sps_pps_size, 1);
     }
     return 0;
 }
@@ -141,7 +141,7 @@ int h264_mp4convert(AVFormatContext *fmt_ctx, AVPacket *in, FILE *output) {
 
     int length;
 
-    uint8_t uint_type;
+    uint8_t unit_type;
     int32_t nal_size;
     uint32_t cumul_size = 0;
 
@@ -156,7 +156,7 @@ int h264_mp4convert(AVFormatContext *fmt_ctx, AVPacket *in, FILE *output) {
     buf = in->data;
     //数据的size
     buf_size = in->size;
-    //数据 data + size 指向数据的大小
+    //数据 data + size 指向数据的大小长度的位置上
     buf_end = in->data + in->size;
 
     //此处的in->data + in->size 实际上是,in中的data位置移动了in->size位置的距离
@@ -174,14 +174,15 @@ int h264_mp4convert(AVFormatContext *fmt_ctx, AVPacket *in, FILE *output) {
         //此时后移4个字节,跳过帧数量的部分,来到真正的帧数据
         buf += 4;
         //NAL Header 占用了一个字节
-        uint_type = *buf & 0x1f;
+        unit_type = *buf & 0x1f;
+
         //判断数据合法性
         if (nal_size > buf_end - buf || nal_size < 0) {
             goto __FAIL;
         }
 
         //判断这个帧是不是关键帧  5 关键帧  7 SPS  8 PPS
-        if (uint_type == 5) {
+        if (unit_type == 5) {
             //如果是关键帧
             h264_extradata_to_annexb(
                     fmt_ctx->streams[in->stream_index]->codec->extradata,
