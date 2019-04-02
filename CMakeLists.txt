@@ -8,6 +8,9 @@ INCLUDE_DIRECTORIES(./include/)
 
 LINK_DIRECTORIES(./lib/)
 
+FIND_FILE(SDL2_INCLUDE_DIR NAME SDL.h HINTS SDL2)
+FIND_LIBRARY(SDL2_LIBRARY NAME SDL2)
+
 SET(SOURCE_FILES
         src/main.c
         src/ffmpeg/ff_log.c src/ffmpeg/ff_log.h
@@ -17,9 +20,12 @@ SET(SOURCE_FILES
         src/ffmpeg/take_audio_data.c src/ffmpeg/take_audio_data.h
         src/ffmpeg/take_video_data.c src/ffmpeg/take_video_data.h
         src/ffmpeg/utils/h264_mp4convert.c src/ffmpeg/utils/h264_mp4convert.h
-        src/ffmpeg/utils/add_adts.c src/ffmpeg/utils/add_adts.h src/play/sample_play_video.c src/play/sample_play_video.h)
+        src/ffmpeg/utils/add_adts.c src/ffmpeg/utils/add_adts.h
+        src/play/sample_play_video.c src/play/sample_play_video.h
+        src/sdl/surface_sdl.c src/sdl/surface_sdl.h)
 
 ADD_EXECUTABLE(Streaming ${SOURCE_FILES})
+
 
 TARGET_LINK_LIBRARIES(
         Streaming
