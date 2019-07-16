@@ -8,3 +8,7 @@ Project learn FFmpeg , C/C++ and media.
 
 - [提取视屏的NAL头部分有误](https://github.com/wangzhumo/Streaming/issues/2)  😭
 
+- [链接SDL2到项目中](https://github.com/wangzhumo/Streaming/issues/3)  💢
+
+
+
