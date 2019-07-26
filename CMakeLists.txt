@@ -1,8 +1,14 @@
-CMAKE_MINIMUM_REQUIRED(VERSION 3.11)
+#Cmake Version
+cmake_minimum_required(VERSION 3.11)
 
-SET(CMAKE_CXX_STANDARD 11)
+#C++ build
+set(CMAKE_CXX_STANDARD 11)
 
-PROJECT(Streaming C)
+#project name
+project(streaming)
+
+# Add the 'Modules' folder to the search path for FindXXX.cmake files
+set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/modules)
 
 LINK_DIRECTORIES(./lib/)
 
